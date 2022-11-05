@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            *{
+                margin: 1px;
+                font-family:'calibri',sans-serif;
+                padding:0%;
+                font-size:20px;
+                box-sizing:content-box;             
+            }
+            .body{
+                margin:100px 400px;
+                background-color: rgb(140, 178, 184);
+                padding:50px 15px;
+                border-radius: 10px;
+                height:240px;
+                width:500px;
+                border-style: solid;
+
+            }
+            .align{
+                margin:0px 0px;
+                padding:4px 0px;
+                display:inline;
+                justify-content: space-between;
+                font-size:2px;
+                text-align:center;
+                width:65%;
+            }
+            .Deg{
+                margin:0px 5px;
+                width:80%;
+                padding:0px 50px;
+                text-align:left;
+            }
+            .t
+            #opt{
+                width:100%;
+                font-size:15px;
+                outline:none;
+                text-align:center;
+                color: rgb(58, 95, 120);
+                background-color: rgb(207, 203, 203);
+                border:none;
+            }
+            .opt{
+                font-size:large;
+                margin-top:100px;
+                font-size:80px;
+            }
+            .value{
+                width:180%;
+                font-size:25px;
+                outline-style: solid;
+                color: rgb(208, 228, 228);
+                background-color: rgb(133, 218, 215);
+                padding:10px 0px;
+                text-align:center;
+               
+            }
+            .btn{
+                padding:10px 0px;
+            }
+            .btn .conv{
+                background-color: rgb(85, 152, 194);
+                border:none;  
+                font-size:20px;
+                border-radius: 2px;
+                border:groove;
+                width:20%;
+                align-items: left;
+            }
+            .btn .res{
+                background-color: rgb(85, 152, 194);
+                border:groove;
+                font-size:20px;
+                border-radius: 2px;
+                width:20%;
+               
+            }
+            .Result{
+                margin:10px 55px;
+                margin-top:0%;
+                text-align:left;
+                padding:0px 0px;
+                width:45%;
+            }
+            
+        </style>
+    </head>
+    <body style="text-align:center;">
+        <div class="body">
+            <p>
+            <h1>TEMPERATURE CONVERTER</h1>
+            </p>
+            <div class="align">
+                <div class="Deg">
+                    <p>Degrees</p>
+                    <div><input type="number" class="t" id="degree"></div>
+                </div>
+                <div class="Deg">
+                    <p>Type</p>
+                    <select id="option">
+                        <option value="fahrenheit">Fahrenheit</option>
+                        <option value="celsius">Celsius</option>
+                    </select>
+                </div>
+           </div>
+           <div class="btn">
+           <button onclick="converter()" class="conv">Convert</button>
+           <button onclick="clearForm()" class="res">Reset</button>
+        </div>
+           <div class="Result">
+            <p>Result</p>
+            <div class="value"></div>
+           </div>
+        </div>
+        <script>
+            function converter()
+            {
+                var op=document.querySelector("#option");
+                var res=document.querySelector(".value");
+                var ip=document.querySelector(".t").value;
+                if(op.value=="fahrenheit")
+                {
+                    var c=(ip-32)*(5/9)
+                    res.innerHTML=c+"°C"
+                }
+                if(op.value=="celsius")
+                {
+                    var f=ip*9/5+32
+                    res.innerHTML=f+"°F"
+                }
+            }
+            function clearForm()
+            {
+                document.getElementById('degree').value='';
+            }
+        </script>
+    </body>
+</html>
